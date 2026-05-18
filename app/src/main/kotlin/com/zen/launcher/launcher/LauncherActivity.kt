@@ -768,15 +768,17 @@ fun SettingsScreen(
             }
         }
 
-        Spacer(Modifier.height(12.dp))
-
-        ZenSearchField(
-            value = appFilter,
-            onValueChange = { appFilter = it },
-            colors = colors
-        )
-
-        Spacer(Modifier.height(12.dp))
+        if (activeTab != 2) {
+            Spacer(Modifier.height(12.dp))
+            ZenSearchField(
+                value = appFilter,
+                onValueChange = { appFilter = it },
+                colors = colors
+            )
+            Spacer(Modifier.height(12.dp))
+        } else {
+            Spacer(Modifier.height(18.dp))
+        }
 
         LazyColumn(
             modifier = Modifier.weight(1f),
